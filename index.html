@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatheria</title>
+    <style>
+        .card-bg {
+            background-image: url("https://auroralabsnorway.com/blog/wp-content/uploads/2020/05/sun-3588618_1920-1200x800.jpg");
+            
+        }
+        #input-error {
+            display: none;
+        }
+        #empty-error {
+            display: none;
+        }
+        body a {
+            text-decoration: none;
+        }
+    </style>
+    <!-- bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/42bf706173.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg bg-dark">
+    <header>
+      <a href="/index.html">
+        <h1 class="text-center text-white"><span class="text-warning"><i class="fa-solid fa-cloud-sun"></i></span> Weatheria</h1>
+      </a>
+    </header>
+    <!-- main -->
+    <main>
+      <!-- searchbar -->
+      <form class="input-group mx-auto w-50">
+        <input id="city-name"
+          type="text"
+          class="form-control"
+          placeholder="Enter a location name"
+          aria-label="Enter a location Name"
+          aria-describedby="button-addon2"
+        />
+        <button onclick="searchTemparature()"
+          class="btn btn-danger btn-outline-secondary text-white"
+          type="button"
+          id="search-btn"
+        >
+          Search
+        </button>
+      </form>
+      <p id="input-error" class="text-center text-danger pt-3 fs-4">
+          <span class="text-warning"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        
+        Sorry, No Matching Location Found..!
+    </p>
+      <p id="empty-error" class="text-center text-danger pt-3 fs-4">
+        <span class="text-warning"><i class="fa-solid fa-triangle-exclamation"></i></span>
+        Please enter a location name..!
+    </p>
+      <!-- weather update content -->
+      <div id="current-data" class="mt-5">
+        <div class="card text-white w-50 mx-auto card-bg" >
+          <img id="weather-icon" src="http://cdn.weatherapi.com/weather/64x64/day/113.png" class="card-img-top w-25  mx-auto d-block" alt="..." />
+          <hr>
+          
+          <div class="card-body">
+            <h5 class="card-title">
+              City: <span id="city"></span>
+            </h5>
+            <h5 class="card-title">
+              Country: <span id="country"></span>
+            </h5>
+            <h5 class="card-title">
+              Timezone: <span id="timezone"></span>
+            </h5>
+            <h5 class="card-title">
+              Local Time: <span id="localtime"></span>
+            </h5>
+            <p class="card-text">
+              Current Temperature: <span id="current-temp"></span>&deg;C
+            </p>
+            <p class="card-text">
+              Feels Like: <span id="feels-like"></span>&deg;C
+            </p>
+            <p class="card-text">
+              Last Updated: <span id="last-update"></span>
+            </p>
+            <p class="card-text">
+              Wind Speed: <span id="wind-speed"></span> K/H | <span id="wind-speedmiles"> </span> M/H
+            </p>
+            <p class="card-text">
+              Wind Direction: <span id="wind-dir">
+            </p>
+            <p class="card-text">
+              Condition: <span id="condition">
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- bootstrp JS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="js/app.js"></script>
+  </body>
+</html>
