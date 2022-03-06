@@ -4,8 +4,9 @@ const API_KEY = `a515a1942b304b8ebd4231129222302`;
 const emptyErr = () => {
   document.getElementById("empty-error").style.display = "block";
   document.getElementById("current-data").style.display = "none";
+  document.getElementById("location-error").style.display = "none";
 };
-// no location error
+// location error
 const locationError = () => {
   document.getElementById("location-error").style.display = "block";
   document.getElementById("empty-error").style.display = "none";
