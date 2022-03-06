@@ -16,7 +16,6 @@ const hideErr = () => {
 const searchTemparature = () => {
   const cityName = document.getElementById("city-name").value;
   if (cityName.length === 0) {
-    console.log("error1");
     empyErr();
   } else {
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${cityName}&days=5&aqi=yes&alerts=yes`;
@@ -37,8 +36,7 @@ const setInnerText = (id, text) => {
 // display data
 
 const displayData = (temparature) => {
-  //   console.log(temparature);
-
+  console.log(temparature);
   setInnerText("city", temparature.location.name);
 
   setInnerText("country", temparature.location.country);
@@ -51,8 +49,6 @@ const displayData = (temparature) => {
   setInnerText("wind-speedmiles", temparature.current.wind_mph);
   setInnerText("wind-dir", temparature.current.wind_dir);
   setInnerText("condition", temparature.current.condition.text);
-
-  // error and data
 
   //   set weather icon
   const getWeatherIcon = temparature.current.condition.icon;
