@@ -15,6 +15,7 @@ const locationError = () => {
 const hideErr = () => {
   document.getElementById("current-data").style.display = "block";
   document.getElementById("empty-error").style.display = "none";
+  document.getElementById("location-error").style.display = "none";
 };
 
 // search temperature by city
