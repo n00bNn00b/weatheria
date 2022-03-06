@@ -8,7 +8,7 @@ const emptyErr = () => {
 // no location error
 const locationError = () => {
   document.getElementById("location-error").style.display = "block";
-  document.getElementById("location-error").style.display = "none";
+  document.getElementById("empty-error").style.display = "none";
   document.getElementById("current-data").style.display = "none";
 };
 // hide error
@@ -66,7 +66,7 @@ const displayData = (temparature) => {
   } catch (error) {
     setInnerText(
       "city",
-      temparature?.location?.name ? temparature.location.name : emptyErr()
+      temparature?.location?.name ? temparature.location.name : locationError()
     );
     // console.log(error);
   }
